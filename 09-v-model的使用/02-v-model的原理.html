@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- <input type="text" v-model="message" /> 两种方法的集合-->
+			<!-- <input type="text" v-bind:value="message" v-on:input="valuesChange" /> -->
+			<input type="text" v-bind:value="message" @input="message=$event.target.value" />
+			<h2>{{message}}</h2>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el: '#app',
+				data: {
+					movies: ['A', 'B'],
+					message: 'Hello Vue'
+				},
+				methods: {
+					valuesChange(event) {
+						this.message = event.target.value;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

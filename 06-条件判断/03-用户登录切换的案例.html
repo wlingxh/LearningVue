@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<span v-if="isUser">
+				<label for="username">用户登录：</label>
+				<input type="text" id="username" placeholder="用户登录" key="username" />
+			</span>
+			<span v-else="isUser">
+				<label for="username">邮箱登录：</label>
+				<input type="text" id="mail" placeholder="邮箱登录" key="mail" />
+			</span>
+			<button @click="isUser =!isUser">切换类型</button>
+		</div>
+
+
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			const app = new Vue({
+				el: '#app',
+				data: {
+					isUser: true
+				},
+
+
+			})
+		</script>
+	</body>
+</html>

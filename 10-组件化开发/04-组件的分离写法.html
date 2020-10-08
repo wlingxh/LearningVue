@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<template id="cpm">
+			<div>
+				<h2>组件化开发1</h2>
+			</div>
+		</template>
+
+		<div id="app">
+			<my-cpm></my-cpm>
+		</div>
+		<script type="text/javascript">
+			//1.创建组件容器
+			//2.注册组件(全局组件,可以在多个vue实例下使用)
+			//语法糖
+			Vue.component('my-cpm', {
+				template: "#cpm"
+			})
+			const app = new Vue({
+				el: '#app',
+
+			})
+		</script>
+	</body>
+</html>

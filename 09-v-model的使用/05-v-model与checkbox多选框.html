@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="checkbox" v-model="hobbies" value="篮球"/>篮球
+			<input type="checkbox" v-model="hobbies" value="足球"/>足球
+			<input type="checkbox" v-model="hobbies" value="乒乓球"/>乒乓球
+			<input type="checkbox" v-model="hobbies" value="羽毛球"/>羽毛球
+			<h2>{{hobbies}}</h2>
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el: '#app',
+				data: {
+					hobbies: [], //多选框
+					message: 'Hello Vue',
+					agree: ''
+				}
+			})
+		</script>
+	</body>
+</html>

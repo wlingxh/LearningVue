@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<template id="cpn1">
+			<div>
+				<h2>{{cmovies}}</h2>
+			</div>
+		</template>
+
+		<div id="app">
+			<cpm1 v-bind:cmovies="movies">
+			</cpm1>
+		</div>
+
+		<script type="text/javascript">
+			//1.创建组件容器
+			const cpm1 = {
+				template: '#cpn1',
+				props: ['cmovies']
+			};
+
+			const app = new Vue({
+				el: '#app',
+				data: {
+					movies: ['A', 'B'],
+					message: 'Hello Vue',
+					fruit: '' //单选框
+				},
+				components: {
+					cpm1
+				}
+			});
+		</script>
+	</body>
+</html>

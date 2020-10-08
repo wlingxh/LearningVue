@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+
+			<select v-model="fruit">
+				<option value="香蕉">香蕉</option>
+				<option value="苹果">苹果</option>
+			</select>
+			<h2>你选择的是:{{fruit}}</h2>
+			
+		</div>
+		<script type="text/javascript">
+			const app = new Vue({
+				el: '#app',
+				data: {
+					movies: ['A', 'B'],
+					message: 'Hello Vue',
+					fruit:''  //单选框
+				}
+			})
+		</script>
+	</body>
+</html>

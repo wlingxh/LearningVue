@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<div id="app">
+			<my-cpm></my-cpm>
+			<my-cpm></my-cpm>
+			<h2>---局部组件---</h2>
+			<cpm></cpm>
+		</div>
+		<div id="app2">
+			<h2>------app2----</h2>
+			<my-cpm></my-cpm>
+			<my-cpm></my-cpm>
+			<h2>---局部组件---</h2>
+			<cpm></cpm>
+		</div>
+		<my-cpm></my-cpm>
+		
+		<script type="text/javascript">
+			//1.创建组件容器
+			const cpmC = Vue.extend({
+				template: `
+				<div>
+				  <h2>组件化开发</h2>
+				</div>
+				`
+			})
+			//2.注册组件(全局组件,可以在多个vue实例下使用)
+			Vue.component('my-cpm', cpmC)
+
+			const app = new Vue({
+				el: '#app',
+				data: {
+					movies: ['A', 'B'],
+					message: 'Hello Vue',
+					fruit: '' //单选框
+				},
+				//局部组件
+				components: {
+					cpm: cpmC
+				}
+			})
+			
+			const app2 = new Vue({
+				el: '#app2'
+			})
+		</script>
+	</body>
+</html>
